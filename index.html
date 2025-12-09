@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="СотоХит — каталог премиальных гаджетов Apple: iPhone, MacBook, AirPods. Быстро. Удобно. Без лишнего.">
+    <meta property="og:title" content="СотоХит — Каталог Apple">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="preview.jpg">
+    <meta property="og:url" content="https://ваш-логин.github.io/sotohit">
+    <title>СотоХит — Каталог товаров</title>
+    
+    <!-- ✅ ИСПРАВЛЕНО: убраны пробелы в URL -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon (SVG, без файлов) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%238E8E9F%22>🛒</text></svg>">
+</head>
+<body>
+    <header>
+        <div class="logo">СотоХит</div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Главная</a></li>
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="favorites-badge" id="favorites-badge" role="status" aria-live="polite">
+                ❤️ <span id="favorites-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Главная -->
+        <section id="home" class="page active">
+            <h1 class="page-title">Добро пожаловать в СотоХит</h1>
+            <p class="page-intro">Ваш надёжный помощник в выборе премиальных гаджетов Apple.</p>
+            <div class="cta-button">
+                <!-- ✅ ДОБАВЛЕН id -->
+                <a href="#catalog" id="go-to-catalog-btn" class="btn-primary">Перейти к каталогу →</a>
+            </div>
+        </section>
+
+        <!-- Каталог -->
+        <section id="catalog" class="page">
+            <h1 class="page-title">Каталог товаров</h1>
+            <input type="text" id="search-input" placeholder="Поиск по названию..." class="search-input">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-category="all">Все</button>
+                <button class="filter-btn" data-category="iphone">📱 iPhone</button>
+                <button class="filter-btn" data-category="macbook">💻 MacBook</button>
+                <button class="filter-btn" data-category="airpods">🎧 AirPods</button>
+            </div>
+            <div class="sort-controls">
+                <button class="sort-btn" data-sort="price-asc">Цена ↑</button>
+                <button class="sort-btn" data-sort="price-desc">Цена ↓</button>
+            </div>
+            <section class="products-grid" id="products-grid">
+                <!-- ✅ ИСПРАВЛЕНО: пробелы → дефисы в именах файлов -->
+                <article class="product-card" data-id="iphone-17-black" data-price="98004" data-category="iphone">
+                    <div class="product-image">
+                        <img src="iphone_17_black_3 1.png" alt="Смартфон Apple iPhone 17 256GB Black">
+                    </div>
+                    <h3 class="product-title">Смартфон Apple iPhone 17 256GB Black (nano-Sim + eSim)</h3>
+                    <p class="product-specs">iPhone 17 объединяет передовые инновации с продуманным дизайном.</p>
+                    <div class="product-price">98 004 руб.</div>
+                    <div class="product-actions">
+                        <button class="btn-fav" data-id="iphone-17-black">❤️</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="iphone-17-pro" data-price="105999" data-category="iphone">
+                    <div class="product-image">
+                        <img src="iphone_17_promax_silver 1.png" alt="Смартфон Apple iPhone 17 Pro 256GB Silver">
+                    </div>
+                    <h3 class="product-title">Смартфон Apple iPhone 17 Pro 256GB Silver (eSim)</h3>
+                    <p class="product-specs">Новый стандарт премиального сегмента.</p>
+                    <div class="product-price">105 999 руб.</div>
+                    <div class="product-actions">
+                        <button class="btn-fav" data-id="iphone-17-pro">❤️</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="macbook-air-starlight" data-price="83700" data-category="macbook">
+                    <div class="product-image">
+                        <img src="macbook_air_2024_starlight_1 1.png" alt="Ноутбук Apple MacBook Air 15 (2025) Starlight">
+                    </div>
+                    <h3 class="product-title">Ноутбук Apple MacBook Air 15 (2025) Starlight MW1J3</h3>
+                    <p class="product-specs">M4 CPU, 16GB RAM, 256GB SSD</p>
+                    <div class="product-price">83 700 руб.</div>
+                    <div class="product-actions">
+                        <button class="btn-fav" data-id="macbook-air-starlight">❤️</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="macbook-air-skyblue" data-price="83700" data-category="macbook">
+                    <div class="product-image">
+                        <img src="macbook_air_15_2025_sky_blue_1 1.png" alt="Ноутбук Apple MacBook Air 15 (2025) Sky Blue">
+                    </div>
+                    <h3 class="product-title">Ноутбук Apple MacBook Air 15 (2025) Sky Blue MC7A4</h3>
+                    <p class="product-specs">M4 CPU, 16GB RAM, 256GB SSD</p>
+                    <div class="product-price">83 700 руб.</div>
+                    <div class="product-actions">
+                        <button class="btn-fav" data-id="macbook-air-skyblue">❤️</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="airpods-pro-3-2025" data-price="23000" data-category="airpods">
+                    <div class="product-image">
+                        <img src="airpods_pro_3_promo 1.png" alt="Беспроводная гарнитура Apple AirPods Pro 3 (2025)">
+                    </div>
+                    <h3 class="product-title">Беспроводная гарнитура Apple AirPods Pro 3 (2025) USB-C</h3>
+                    <p class="product-specs">Лучшая в мире система шумоподавления.</p>
+                    <div class="product-price">23 000 руб.</div>
+                    <div class="product-actions">
+                        <button class="btn-fav" data-id="airpods-pro-3-2025">❤️</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="airpods-pro-2-2023" data-price="17655" data-category="airpods">
+                    <div class="product-image">
+                        <img src="airpods_pro_2022_4 1.png" alt="Беспроводная гарнитура Apple AirPods Pro 2 (2023)">
+                    </div>
+                    <h3 class="product-title">Беспроводная гарнитура Apple AirPods Pro 2 (2023) USB-C</h3>
+                    <p class="product-specs">Улучшенное шумоподавление и контроль.</p>
+                    <div class="product-price">17 655 руб.</div>
+                    <div class="product-actions">
+                        <button class="btn-fav" data-id="airpods-pro-2-2023">❤️</button>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <!-- О нас -->
+        <section id="about" class="page">
+            <h1 class="page-title">О нас</h1>
+            <div class="about-content">
+                <p>СотоХит — это сообщество людей, которые ценят качество, дизайн и инновации.</p>
+                <p>Мы помогаем выбрать идеальный гаджет без переплат.</p>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section id="contacts" class="page">
+            <h1 class="page-title">Контакты</h1>
+            <div class="contacts-content">
+                <p><strong>Телеграм:</strong> <a href="https://t.me/sotohit" target="_blank">@sotohit</a></p>
+                <p><strong>Email:</strong> support@sotohit.ru</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">СотоХит</div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="footer-disclaimer">
+                Не является офертой. Ст. 437 ГК РФ.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
